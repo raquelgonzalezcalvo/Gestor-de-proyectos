@@ -37,56 +37,60 @@ function App() {
     }
   };
 
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  }
+
   return (
     <div className="container">
       <header className="header">
-        <p className="text">Proyectos Molones</p>
+        <p className="header__text">Proyectos Molones</p>
       </header>
       <main className="main">
         <section className="preview">
-          <img className="image" src={cover} alt="" />
+          <img className="preview__image" src={cover} alt="" />
 
-          <article className="autor">
-            <div className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
+          <article className="preview__autor">
+            <div className="preview__autor__info-project">
+              <p className="preview__autor__info-project--subtitle">Personal Project Card</p>
+              {/* <hr className="line" /> */}
 
-              <h2 className="title">{name || "Elegant Workspace"}</h2>
-              <p className="slogan">{slogan || "Diseños Exclusivos"}</p>
-              <p className="desc">
+              <h2 className="preview__autor__info-project--title">{name || "Elegant Workspace"}</h2>
+              <p className="preview__autor__info-project--slogan">{slogan || "Diseños Exclusivos"}</p>
+              <p className="preview__autor__info-project--desc">
                 {desc ||
                   "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipi harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!"}
               </p>
-              <div className="technologies">
-                <p className="text">{technologies || "React JS, MongoDB"}</p>
+              <div className="preview__autor__info-project--technologies">
+                <p className="preview__autor__info-project--technologies--text">{technologies || "React JS, MongoDB"}</p>
               </div>
-              <div>
+              <div className="preview__autor__info-project--icons">
                 <a href={repo} target="_blank" rel="noreferrer">
-                  <i class="fa-brands fa-github-alt"></i>
+                  <i className="fa-brands fa-github-alt"></i>
                 </a>
                 <a href={demo} target="_blank" rel="noreferrer">
-                  <i class="fa-solid fa-globe"></i>
+                  <i className="fa-solid fa-globe"></i>
                 </a>
               </div>
             </div>
 
-            <div className="info-autor">
-              <img className="image" src={user} alt="" />
-              <p className="job">{job || "Full Stack Developer"}</p>
-              <p className="name">{autor || "Emmelie Björklund"}</p>
+            <div className="preview__autor__info-autor">
+              <img className="preview__autor__info-autor--image" src={user} alt="" />
+              <p className="preview__autor__info-autor--job">{job || "Full Stack Developer"}</p>
+              <p className="preview__autor__info-autor--name">{autor || "Emmelie Björklund"}</p>
             </div>
           </article>
         </section>
-        <section>
-          <h2 className="title">Información</h2>
-          <form className="form">
-            <fieldset className="project">
-              <legend className="ask-info subtitle">
+        <section className='sectionForm'>
+          <h2 className="sectionForm__title">Información</h2>
+          <form className="sectionForm__form" onSubmit={handleSubmit}>
+            <fieldset className="sectionForm__form__project">
+              <legend className="sectionForm__form__project--info">
                 Cuéntanos sobre el proyecto
-                <hr className="line" />
+                {/* <hr className="line" /> */}
               </legend>
               <input
-                className="input"
+                className="sectionForm__form__project--input"
                 type="text"
                 placeholder="Nombre del proyecto"
                 name="name"
@@ -95,7 +99,7 @@ function App() {
                 onChange={handleInput}
               />
               <input
-                className="input"
+                className="sectionForm__form__project--input"
                 type="text"
                 name="slogan"
                 id="slogan"
@@ -104,7 +108,7 @@ function App() {
                 onChange={handleInput}
               />
               <input
-                className="input"
+                className="sectionForm__form__project--input"
                 type="text"
                 name="repo"
                 id="repo"
@@ -113,7 +117,7 @@ function App() {
                 onChange={handleInput}
               />
               <input
-                className="input"
+                className="sectionForm__form__project--input"
                 type="text"
                 placeholder="Demo"
                 name="demo"
@@ -122,7 +126,7 @@ function App() {
                 onChange={handleInput}
               />
               <input
-                className="input"
+                className="sectionForm__form__project--input"
                 type="text"
                 placeholder="Tecnologías"
                 name="technologies"
@@ -131,7 +135,7 @@ function App() {
                 onChange={handleInput}
               />
               <textarea
-                className="textarea"
+                className="sectionForm__form__project--textarea"
                 type="text"
                 placeholder="Descripción"
                 name="desc"
@@ -141,13 +145,13 @@ function App() {
               ></textarea>
             </fieldset>
 
-            <fieldset className="autor">
-              <legend className="ask-info subtitle">
+            <fieldset className="sectionForm__form__autor">
+              <legend className="sectionForm__form__autor--info">
                 Cuéntanos sobre la autora
-                <hr className="line" />
+                {/* <hr className="line" /> */}
               </legend>
               <input
-                className="input"
+                className="sectionForm__form__autor--input"
                 type="text"
                 placeholder="Nombre"
                 name="autor"
@@ -156,7 +160,7 @@ function App() {
                 onChange={handleInput}
               />
               <input
-                className="input"
+                className="sectionForm__form__autor--input"
                 type="text"
                 placeholder="Trabajo"
                 name="job"
@@ -166,29 +170,29 @@ function App() {
               />
             </fieldset>
 
-            <fieldset className="buttons-img">
+            <fieldset className="sectionForm__form__button">
               <input
-                className="btn"
+                className="sectionForm__form__button--btn"
                 type="button"
                 value="Subir foto de proyecto"
               />
               <input
-                className="btn"
+                className="sectionForm__form__button--btn"
                 type="button"
                 value="Subir foto de autora"
               />
             </fieldset>
 
-            <fieldset className="buttons-img">
+            <fieldset className="sectionForm__form__button">
               <input
-                className="btn-large"
+                className="sectionForm__form__button--btnLarge"
                 onClick="{handleClickCreateCard}"
                 type="submit"
                 value="Crear Tarjeta"
               />
             </fieldset>
           </form>
-          <div className="card">
+          <div className="sectionForm__form__card hidden">
             <p className=""> La tarjeta ha sido creada: </p>
             <a href="" className="" target="_blank" rel="noreferrer">
             </a>
