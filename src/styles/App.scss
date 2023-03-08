@@ -1,28 +1,25 @@
 @import "./core/reset";
+@import "./layout/main";
 @import "./layout/header";
 @import "./layout/preview";
 @import "./layout/form";
 
 .container {
   background-color: #302c42;
-  height: 100vh;
-  padding: 20px;
+  //height: 100vh;
+  //padding: 20px;
 }
 
-.main {
-  display: flex;
-  padding-top: 50px;
-  height: 80vh;
-}
 
 .sectionForm {
   &__title {
     color: #ffffff;
     text-align: center;
+    
   }
   &__form {
     background-color: #302c42;
-    width: 40%;
+    //width: 100%;
     &__project {
       display: flex;
       flex-direction: column;
@@ -125,7 +122,7 @@
 }
 
 .main .preview {
-  padding: 20px;
+  // padding: 20px;
 }
 
 // .btn-color {
