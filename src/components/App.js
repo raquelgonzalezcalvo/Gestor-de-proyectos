@@ -189,13 +189,15 @@ function App() {
             </fieldset>
 
             <fieldset className="sectionForm__form__button">
+              <label className="sectionForm__form__button--btn" htmlFor="">Subir foto del proyecto</label>
               <input
-                className="sectionForm__form__button--btn"
+                className="hidden"
                 type="button"
                 value="Subir foto de proyecto"
               />
+              <label className="sectionForm__form__button--btn" htmlFor="">Subir foto de la autora</label>
               <input
-                className="sectionForm__form__button--btn"
+                className="hidden"
                 type="button"
                 value="Subir foto de autora"
               />
@@ -219,9 +221,9 @@ function App() {
       </main>
       <footer className="footer">
         <p className="footer__copy">Nombre del equipo</p>
-        <img src={logo} alt="Logo Adalab" className="footer__image"/>
+        <img src={logo} alt="Logo Adalab" className="footer__image" />
       </footer>
-  
+
     </div>
   );
 }
