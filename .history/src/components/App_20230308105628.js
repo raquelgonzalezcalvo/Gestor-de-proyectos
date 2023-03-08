@@ -2,7 +2,7 @@ import "../styles/App.scss";
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import { useState } from "react";
-import logo from '../images/logo-adalab.png';
+// import logo from '../images/logo-adalab.png';
 // import cover2 from '../images/cover_2.jpeg';
 
 function App() {
@@ -89,7 +89,7 @@ function App() {
                 Cuéntanos sobre el proyecto
                 {/* <hr className="line" /> */}
               </legend>
-              <label htmlFor="name" className="sectionForm__form__project--label">Nombre del proyecto:
+              <label htmlFor="name">Nombre del proyecto:
                 <input
                   className="sectionForm__form__project--input"
                   type="text"
@@ -100,7 +100,7 @@ function App() {
                   onChange={handleInput}
                 />
               </label>
-              <label htmlFor="slogan" className="sectionForm__form__project--label">Slogan:
+              <label htmlFor="slogan">Slogan:
                 <input
                   className="sectionForm__form__project--input"
                   type="text"
@@ -111,7 +111,7 @@ function App() {
                   onChange={handleInput}
                 />
               </label>
-              <label htmlFor="repo" className="sectionForm__form__project--label">Repositorio:
+              <label htmlFor="repo">Repositorio:
                 <input
                   className="sectionForm__form__project--input"
                   type="text"
@@ -122,7 +122,7 @@ function App() {
                   onChange={handleInput}
                 />
               </label>
-              <label htmlFor="demo" className="sectionForm__form__project--label">Demo:
+              <label htmlFor="demo">Demo:
                 <input
                   className="sectionForm__form__project--input"
                   type="text"
@@ -133,7 +133,7 @@ function App() {
                   onChange={handleInput}
                 />
               </label>
-              <label htmlFor="technologies" className="sectionForm__form__project--label">Tecnologías:
+              <label htmlFor="technologies">Tecnologías:
                 <input
                   className="sectionForm__form__project--input"
                   type="text"
@@ -144,7 +144,7 @@ function App() {
                   onChange={handleInput}
                 />
               </label>
-              <label htmlFor="desc" className="sectionForm__form__project--label">Descripción:
+              <label htmlFor="desc">Descripción:
                 <textarea
                   className="sectionForm__form__project--textarea"
                   type="text"
@@ -162,7 +162,7 @@ function App() {
                 Cuéntanos sobre la autora
                 {/* <hr className="line" /> */}
               </legend>
-              <label htmlFor="autor" className="sectionForm__form__project--label">Nombre:
+              <label htmlFor="autor">Nombre:
                 <input
                   className="sectionForm__form__autor--input"
                   type="text"
@@ -173,17 +173,15 @@ function App() {
                   onChange={handleInput}
                 />
               </label>
-              <label htmlFor="job" className="sectionForm__form__project--label">Profesión:
-                <input
-                  className="sectionForm__form__autor--input"
-                  type="text"
-                  placeholder="Ejemplo: Front-end developer"
-                  name="job"
-                  id="job"
-                  value={job}
-                  onChange={handleInput}
-                />
-              </label>
+              <input
+                className="sectionForm__form__autor--input"
+                type="text"
+                placeholder="Trabajo"
+                name="job"
+                id="job"
+                value={job}
+                onChange={handleInput}
+              />
             </fieldset>
 
             <fieldset className="sectionForm__form__button">
@@ -204,7 +202,7 @@ function App() {
                 className="sectionForm__form__button--btnLarge"
                 onClick="{handleClickCreateCard}"
                 type="submit"
-                value="CREAR TARJETA"
+                value="Crear Tarjeta"
               />
             </fieldset>
           </form>
@@ -215,11 +213,6 @@ function App() {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <p className="footer__copy">Nombre del equipo</p>
-        <img src={logo} alt="Logo Adalab" className="footer__image"/>
-      </footer>
-  
     </div>
   );
 }

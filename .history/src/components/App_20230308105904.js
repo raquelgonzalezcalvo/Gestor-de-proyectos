@@ -2,7 +2,7 @@ import "../styles/App.scss";
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import { useState } from "react";
-import logo from '../images/logo-adalab.png';
+// import logo from '../images/logo-adalab.png';
 // import cover2 from '../images/cover_2.jpeg';
 
 function App() {
@@ -204,7 +204,7 @@ function App() {
                 className="sectionForm__form__button--btnLarge"
                 onClick="{handleClickCreateCard}"
                 type="submit"
-                value="CREAR TARJETA"
+                value="Crear Tarjeta"
               />
             </fieldset>
           </form>
@@ -215,11 +215,6 @@ function App() {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <p className="footer__copy">Nombre del equipo</p>
-        <img src={logo} alt="Logo Adalab" className="footer__image"/>
-      </footer>
-  
     </div>
   );
 }

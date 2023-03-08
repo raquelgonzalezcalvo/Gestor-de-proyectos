@@ -2,7 +2,7 @@ import "../styles/App.scss";
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import { useState } from "react";
-import logo from '../images/logo-adalab.png';
+// import logo from '../images/logo-adalab.png';
 // import cover2 from '../images/cover_2.jpeg';
 
 function App() {
@@ -217,7 +217,7 @@ function App() {
       </main>
       <footer className="footer">
         <p className="footer__copy">Nombre del equipo</p>
-        <img src={logo} alt="Logo Adalab" className="footer__image"/>
+        <img src="../im" alt="" className="footer__image"/>
       </footer>
   
     </div>

@@ -1,6 +1,4 @@
 .sectionForm {
-    margin-bottom: 30px;
-
     &__title {
         color: #ffffff;
         text-align: center;
@@ -87,31 +85,31 @@
         }
 
         &__button {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
+            text-align: center;
 
             &--btn {
                 width: 160px;
                 margin-top: 10px;
                 color: white;
                 text-align: center;
-                border: solid 2px #dbd3f8;
+                border: none;
                 height: 43px;
                 background-color: #978bc6;
+                //background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
                 border-radius: 40px;
             }
 
             &--btnLarge {
                 width: 160px;
-                margin-top: 25px;
+                margin-top: 10px;
                 color: white;
                 text-align: center;
+                border: none;
                 height: 43px;
-                background-color: #978bc6;
+                background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
                 border-radius: 40px;
                 width: 200px;
-                border: solid 2px #dbd3f8;
+                border: solid 2px white;
             }
         }
 

@@ -2,7 +2,7 @@ import "../styles/App.scss";
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import { useState } from "react";
-import logo from '../images/logo-adalab.png';
+// import logo from '../images/logo-adalab.png';
 // import cover2 from '../images/cover_2.jpeg';
 
 function App() {
@@ -89,72 +89,61 @@ function App() {
                 Cuéntanos sobre el proyecto
                 {/* <hr className="line" /> */}
               </legend>
-              <label htmlFor="name" className="sectionForm__form__project--label">Nombre del proyecto:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  placeholder="Ejemplo: Mi proyecto"
-                  name="name"
-                  id="name"
-                  value={name}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="slogan" className="sectionForm__form__project--label">Slogan:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  name="slogan"
-                  id="slogan"
-                  placeholder="Ejemplo: "
-                  value={slogan}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="repo" className="sectionForm__form__project--label">Repositorio:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  name="repo"
-                  id="repo"
-                  placeholder="Ejemplo: https://github.com/Adalab/my-project"
-                  value={repo}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="demo" className="sectionForm__form__project--label">Demo:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  placeholder="Ejemplo: http://beta.adalab.es/my-project/"
-                  name="demo"
-                  id="demo"
-                  value={demo}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="technologies" className="sectionForm__form__project--label">Tecnologías:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  placeholder="Ejemplo: React - SASS - HTML"
-                  name="technologies"
-                  id="technologies"
-                  value={technologies}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="desc" className="sectionForm__form__project--label">Descripción:
-                <textarea
-                  className="sectionForm__form__project--textarea"
-                  type="text"
-                  placeholder="Ejemplo: Este es mi proyecto."
-                  name="desc"
-                  id="desc"
-                  value={desc}
-                  onChange={handleInput}
-                ></textarea>
-              </label>
+              
+              <input
+                className="sectionForm__form__project--input"
+                type="text"
+                placeholder="Nombre del proyecto"
+                name="name"
+                id="name"
+                value={name}
+                onChange={handleInput}
+              />
+              <input
+                className="sectionForm__form__project--input"
+                type="text"
+                name="slogan"
+                id="slogan"
+                placeholder="Slogan"
+                value={slogan}
+                onChange={handleInput}
+              />
+              <input
+                className="sectionForm__form__project--input"
+                type="text"
+                name="repo"
+                id="repo"
+                placeholder="Repo"
+                value={repo}
+                onChange={handleInput}
+              />
+              <input
+                className="sectionForm__form__project--input"
+                type="text"
+                placeholder="Demo"
+                name="demo"
+                id="demo"
+                value={demo}
+                onChange={handleInput}
+              />
+              <input
+                className="sectionForm__form__project--input"
+                type="text"
+                placeholder="Tecnologías"
+                name="technologies"
+                id="technologies"
+                value={technologies}
+                onChange={handleInput}
+              />
+              <textarea
+                className="sectionForm__form__project--textarea"
+                type="text"
+                placeholder="Descripción"
+                name="desc"
+                id="desc"
+                value={desc}
+                onChange={handleInput}
+              ></textarea>
             </fieldset>
 
             <fieldset className="sectionForm__form__autor">
@@ -162,28 +151,24 @@ function App() {
                 Cuéntanos sobre la autora
                 {/* <hr className="line" /> */}
               </legend>
-              <label htmlFor="autor" className="sectionForm__form__project--label">Nombre:
-                <input
-                  className="sectionForm__form__autor--input"
-                  type="text"
-                  placeholder="Ejemplo: MariCarmen"
-                  name="autor"
-                  id="autor"
-                  value={autor}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="job" className="sectionForm__form__project--label">Profesión:
-                <input
-                  className="sectionForm__form__autor--input"
-                  type="text"
-                  placeholder="Ejemplo: Front-end developer"
-                  name="job"
-                  id="job"
-                  value={job}
-                  onChange={handleInput}
-                />
-              </label>
+              <input
+                className="sectionForm__form__autor--input"
+                type="text"
+                placeholder="Nombre"
+                name="autor"
+                id="autor"
+                value={autor}
+                onChange={handleInput}
+              />
+              <input
+                className="sectionForm__form__autor--input"
+                type="text"
+                placeholder="Trabajo"
+                name="job"
+                id="job"
+                value={job}
+                onChange={handleInput}
+              />
             </fieldset>
 
             <fieldset className="sectionForm__form__button">
@@ -204,7 +189,7 @@ function App() {
                 className="sectionForm__form__button--btnLarge"
                 onClick="{handleClickCreateCard}"
                 type="submit"
-                value="CREAR TARJETA"
+                value="Crear Tarjeta"
               />
             </fieldset>
           </form>
@@ -215,11 +200,6 @@ function App() {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <p className="footer__copy">Nombre del equipo</p>
-        <img src={logo} alt="Logo Adalab" className="footer__image"/>
-      </footer>
-  
     </div>
   );
 }

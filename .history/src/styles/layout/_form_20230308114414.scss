@@ -1,6 +1,4 @@
 .sectionForm {
-    margin-bottom: 30px;
-
     &__title {
         color: #ffffff;
         text-align: center;
@@ -89,14 +87,14 @@
         &__button {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 5px;
 
             &--btn {
                 width: 160px;
                 margin-top: 10px;
                 color: white;
                 text-align: center;
-                border: solid 2px #dbd3f8;
+                border: none;
                 height: 43px;
                 background-color: #978bc6;
                 border-radius: 40px;
@@ -104,14 +102,14 @@
 
             &--btnLarge {
                 width: 160px;
-                margin-top: 25px;
+                margin-top: 10px;
                 color: white;
                 text-align: center;
                 height: 43px;
                 background-color: #978bc6;
                 border-radius: 40px;
                 width: 200px;
-                border: solid 2px #dbd3f8;
+                border: solid 2px white;
             }
         }
 

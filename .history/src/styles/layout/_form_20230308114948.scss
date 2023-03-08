@@ -1,6 +1,4 @@
 .sectionForm {
-    margin-bottom: 30px;
-
     &__title {
         color: #ffffff;
         text-align: center;
@@ -104,7 +102,7 @@
 
             &--btnLarge {
                 width: 160px;
-                margin-top: 25px;
+                margin-top: 10px;
                 color: white;
                 text-align: center;
                 height: 43px;
@@ -112,6 +110,7 @@
                 border-radius: 40px;
                 width: 200px;
                 border: solid 2px #dbd3f8;
+                font-size: 18px;
             }
         }
 

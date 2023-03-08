@@ -217,7 +217,7 @@ function App() {
       </main>
       <footer className="footer">
         <p className="footer__copy">Nombre del equipo</p>
-        <img src={logo} alt="Logo Adalab" className="footer__image"/>
+        <img src="../im" alt="" className="footer__image"/>
       </footer>
   
     </div>
