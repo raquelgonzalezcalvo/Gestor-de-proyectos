@@ -45,7 +45,8 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <p className="header__text">Proyectos Molones</p>
+        <i className="fa-solid fa-laptop-code"></i>
+        <h1 className="header__text">Gestor de proyectos</h1>
       </header>
       <main className="main">
         <section className="preview">
@@ -60,7 +61,7 @@ function App() {
               <p className="preview__autor__info-project--slogan">{slogan || "Diseños Exclusivos"}</p>
               <p className="preview__autor__info-project--desc">
                 {desc ||
-                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipi harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!"}
+                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipi harum laboriosam"}
               </p>
               <div className="preview__autor__info-project--technologies">
                 <p className="preview__autor__info-project--technologies--text">{technologies || "React JS, MongoDB"}</p>

@@ -1,8 +1,18 @@
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  gap: 5px;
+  .fa-laptop-code {
+    color: white;
+    font-size: 20px;
+  }
+
   &__text {
     color: white;
+    text-transform: uppercase;
+    
   }
 }
