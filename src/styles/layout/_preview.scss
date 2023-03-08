@@ -1,9 +1,13 @@
 .preview {
+ 
   // width: 60%;
   &__image {
     object-fit: cover;
     width: 100%;
     height: 40vh;
+    @media all and (min-width:768px) {
+        height: 65vh;
+      }
   }
         
   &__autor {
@@ -13,36 +17,39 @@
     // height: 50%;
     transform: translateY(-45px);
     margin: auto;
-    border-radius: 15px;
+    border-radius: 1.5rem;
     display: flex;
     flex-direction: row-reverse;
-    padding: 10px;
+    padding: 1rem;
     gap:8px;
     align-items: flex-start;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @media all and (min-width:768px) {
+        height: 25vh;
+        transform: translateY(-55px);
+      }
     // overflow-y: scroll;
   
     &__info-project {
       width: 60%;
       &--subtitle {
-          font-size: 8px;
+          font-size: 0.6rem;
           text-align: center;
-          margin-bottom: 10px;
-      
+          margin-bottom: 0.9rem;
         }
       
       &--title {
-        font-size: 14px;
+        font-size: 0.9rem;
         color: black;
-        margin-bottom: 10px;
+        margin-bottom: 0.3rem;
       }
       &--slogan {
-        font-size: 12px;
-        margin-bottom: 10px;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
       }
       &--desc {
-        font-size: 8px;
+        font-size: 0.65rem;
         margin-bottom: 10px;
       }
       &--technologies {
@@ -53,7 +60,7 @@
         text-align: center;
       }
       &--icons {
-        font-size: 15px;
+        font-size: 1rem;
         text-align: center;
         padding-top: 7px;
         .fa-github-alt {
@@ -77,11 +84,11 @@
       &--job {
         font-weight: bold;
         color: black;
-        font-size: 10px;
+        font-size: 0.7rem;
         margin-bottom: 5px;
       }
       &--name {
-        font-size: 14px;
+        font-size: 1rem;
       
       }
     }
