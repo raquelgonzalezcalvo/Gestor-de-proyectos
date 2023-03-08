@@ -4,7 +4,10 @@
 @import "./layout/preview";
 @import "./layout/form";
 
-
+@media (min-width:768px){
+  display: flex;
+  flex-direction: row;
+}
 .sectionForm {
   &__title {
     color: #ffffff;

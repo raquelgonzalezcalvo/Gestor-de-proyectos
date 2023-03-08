@@ -44,7 +44,8 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <p className="header__text">Proyectos Molones</p>
+        <i className="fa-solid fa-laptop-code"></i>
+        <h1 className="header__text">Gestor de proyectos</h1>
       </header>
       <main className="main">
         <section className="preview">
