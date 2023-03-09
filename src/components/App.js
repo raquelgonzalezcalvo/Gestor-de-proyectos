@@ -7,34 +7,53 @@ import logo from '../images/logo-adalab.png';
 //pepino
 
 function App() {
-  const [name, setName] = useState("");
-  const [slogan, setSlogan] = useState("");
-  const [repo, setRepo] = useState("");
-  const [demo, setDemo] = useState("");
-  const [technologies, setTechnologies] = useState("");
-  const [desc, setDesc] = useState("");
-  const [autor, setAutor] = useState("");
-  const [job, setJob] = useState("");
+  // const [name, setName] = useState("");
+  // const [slogan, setSlogan] = useState("");
+  // const [repo, setRepo] = useState("");
+  // const [demo, setDemo] = useState("");
+  // const [technologies, setTechnologies] = useState("");
+  // const [desc, setDesc] = useState("");
+  // const [autor, setAutor] = useState("");
+  // const [job, setJob] = useState("");
+
+  const [data, setData] = useState({
+    name:"",
+    slogan:"",
+    repo:"",
+    demo:"",
+    technologies:"",
+    desc:"",
+    autor:"",
+    job:"",
+  })
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     if (inputName === "name") {
-      setName(inputValue);
+      setData({
+        ...data, name: inputValue});
     } else if (inputName === "slogan") {
-      setSlogan(inputValue);
+      setData({
+        ...data, slogan: inputValue});
     } else if (inputName === "repo") {
-      setRepo(inputValue);
+      setData({
+        ...data, repo: inputValue});
     } else if (inputName === "demo") {
-      setDemo(inputValue);
+     setData({
+        ...data, demo: inputValue});
     } else if (inputName === "technologies") {
-      setTechnologies(inputValue);
+      setData({
+        ...data, technologies: inputValue});
     } else if (inputName === "desc") {
-      setDesc(inputValue);
+      setData({
+        ...data, desc: inputValue});
     } else if (inputName === "autor") {
-      setAutor(inputValue);
+      setData({
+        ...data, autor: inputValue});
     } else if (inputName === "job") {
-      setJob(inputValue);
+      setData({
+        ...data, job: inputValue});
     }
   };
 
@@ -57,20 +76,20 @@ function App() {
               <p className="preview__autor__info-project--subtitle">Personal Project Card</p>
               {/* <hr className="line" /> */}
 
-              <h2 className="preview__autor__info-project--title">{name || "Elegant Workspace"}</h2>
-              <p className="preview__autor__info-project--slogan">{slogan || "Diseños Exclusivos"}</p>
+              <h2 className="preview__autor__info-project--title">{data.name || "Elegant Workspace"}</h2>
+              <p className="preview__autor__info-project--slogan">{data.slogan || "Diseños Exclusivos"}</p>
               <p className="preview__autor__info-project--desc">
-                {desc ||
+                {data.desc ||
                   "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipi harum laboriosam"}
               </p>
               <div className="preview__autor__info-project--technologies">
-                <p className="preview__autor__info-project--technologies--text">{technologies || "React JS, MongoDB"}</p>
+                <p className="preview__autor__info-project--technologies--text">{data.technologies || "React JS, MongoDB"}</p>
               </div>
               <div className="preview__autor__info-project--icons">
-                <a href={repo} target="_blank" rel="noreferrer">
+                <a href={data.repo} target="_blank" rel="noreferrer">
                   <i className="fa-brands fa-github-alt"></i>
                 </a>
-                <a href={demo} target="_blank" rel="noreferrer">
+                <a href={data.demo} target="_blank" rel="noreferrer">
                   <i className="fa-solid fa-globe"></i>
                 </a>
               </div>
@@ -78,8 +97,8 @@ function App() {
 
             <div className="preview__autor__info-autor">
               <img className="preview__autor__info-autor--image" src={user} alt="" />
-              <p className="preview__autor__info-autor--job">{job || "Full Stack Developer"}</p>
-              <p className="preview__autor__info-autor--name">{autor || "Emmelie Björklund"}</p>
+              <p className="preview__autor__info-autor--job">{data.job || "Full Stack Developer"}</p>
+              <p className="preview__autor__info-autor--name">{data.autor || "Emmelie Björklund"}</p>
             </div>
           </article>
         </section>
@@ -98,7 +117,7 @@ function App() {
                   placeholder="Ejemplo: Mi proyecto"
                   name="name"
                   id="name"
-                  value={name}
+                  value={data.name}
                   onChange={handleInput}
                 />
               </label>
@@ -109,7 +128,7 @@ function App() {
                   name="slogan"
                   id="slogan"
                   placeholder="Ejemplo: "
-                  value={slogan}
+                  value={data.slogan}
                   onChange={handleInput}
                 />
               </label>
@@ -120,7 +139,7 @@ function App() {
                   name="repo"
                   id="repo"
                   placeholder="Ejemplo: https://github.com/Adalab/my-project"
-                  value={repo}
+                  value={data.repo}
                   onChange={handleInput}
                 />
               </label>
@@ -131,7 +150,7 @@ function App() {
                   placeholder="Ejemplo: http://beta.adalab.es/my-project/"
                   name="demo"
                   id="demo"
-                  value={demo}
+                  value={data.demo}
                   onChange={handleInput}
                 />
               </label>
@@ -142,7 +161,7 @@ function App() {
                   placeholder="Ejemplo: React - SASS - HTML"
                   name="technologies"
                   id="technologies"
-                  value={technologies}
+                  value={data.technologies}
                   onChange={handleInput}
                 />
               </label>
@@ -153,7 +172,7 @@ function App() {
                   placeholder="Ejemplo: Este es mi proyecto."
                   name="desc"
                   id="desc"
-                  value={desc}
+                  value={data.desc}
                   onChange={handleInput}
                 ></textarea>
               </label>
@@ -171,7 +190,7 @@ function App() {
                   placeholder="Ejemplo: MariCarmen"
                   name="autor"
                   id="autor"
-                  value={autor}
+                  value={data.autor}
                   onChange={handleInput}
                 />
               </label>
@@ -182,7 +201,7 @@ function App() {
                   placeholder="Ejemplo: Front-end developer"
                   name="job"
                   id="job"
-                  value={job}
+                  value={data.job}
                   onChange={handleInput}
                 />
               </label>
