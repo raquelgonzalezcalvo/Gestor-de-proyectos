@@ -1,5 +1,7 @@
 .preview {
-  // width: 60%;
+  @media all and (min-width: 768px) {
+    width: 60%;
+  }
   &__image {
     object-fit: cover;
     width: 100%;
@@ -32,28 +34,29 @@
     &__info-project {
       width: 60%;
       &--subtitle {
-        font-size: 0.6rem;
+        font-size: 20px;
+        font-weight: bold;
         text-align: center;
         margin-bottom: 0.9rem;
       }
 
       &--title {
-        font-size: 0.9rem;
+        font-size: 18px;
         color: black;
         margin-bottom: 0.3rem;
       }
       &--slogan {
-        font-size: 0.8rem;
+        font-size: 15px;
         margin-bottom: 0.8rem;
       }
       &--desc {
-        font-size: 0.65rem;
+        font-size: 15px;
         margin-bottom: 10px;
       }
       &--technologies {
         background-color: lightgray;
         border-radius: 20px;
-        font-size: 10px;
+        font-size: 15px;
         padding: 10px;
         text-align: center;
       }
@@ -75,7 +78,7 @@
       align-items: center;
       &--image {
         border-radius: 50%;
-        width: 90px;
+        width: 140px;
       }
       &--job {
         font-weight: bold;
@@ -90,6 +93,10 @@
   }
 }
 
+.fa-brands,
+.fa-solid {
+  font-size: 18px;
+}
 // OPCION DE TRASNFORMARLA EN UN BORDER BOTTOM
 // .info-project .line {
 //     width: 100%;

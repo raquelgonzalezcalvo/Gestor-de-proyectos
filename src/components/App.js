@@ -26,13 +26,13 @@ function App() {
     desc: "",
     autor: "",
     job: "",
-    image: "http://edap.es/wp-content/uploads/blog9-img-01.jpg",
-    photo: "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg"
+    image: "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
+    photo: "http://edap.es/wp-content/uploads/blog9-img-01.jpg"
   })
 
   const [url, setUrl] = useState('');
   const [info, setInfo] = useState('');
-  // const [card, setCard] = useState('');
+  const [card, setCard] = useState('');
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -80,9 +80,20 @@ function App() {
     dataApi(data)
       .then(info => {
         console.log(info);
-        setUrl(info.cardURL)
-        setInfo(info)
-        // errorMsg()
+        if (!info.success) {
+          if (info.error.includes('Mandatory fields:')) {
+            setCard('Todos los campos son obligatorios. Por favor, revise y cubra los campos restantes.');
+          } else if (info.error.includes('Database error: ER_DATA_TOO_LONG')) {
+            setCard('La foto es desmasiado grande debe ser de 200x200 px y menor a 120 KB, intente reducirla o use otra foto.');
+          } else if (info.error.includes('Database error: Database was shut down')) {
+            setCard('Ha ocurrido un error con el servidor, inténtelo de nuevo más tarde.');
+          } else {
+            setCard('Lo sentimos, ha ocurrido un error, inténtelo de nuevo más tarde.');
+          }
+        } else {
+          setUrl(info.cardURL)
+          setInfo(info)
+        }
       })
   }
 
@@ -175,6 +186,7 @@ function App() {
                   type="text"
                   name="repo"
                   id="repo"
+                  pattern='^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$'
                   placeholder="Ejemplo: https://github.com/Adalab/my-project"
                   value={data.repo}
                   onChange={handleInput}
@@ -187,9 +199,11 @@ function App() {
                   placeholder="Ejemplo: http://beta.adalab.es/my-project/"
                   name="demo"
                   id="demo"
+                  pattern='^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$'
                   value={data.demo}
                   onChange={handleInput}
                 />
+                <p></p>
               </label>
               <label htmlFor="technologies" className="sectionForm__form__project--label">Tecnologías:
                 <input
@@ -269,12 +283,12 @@ function App() {
             </fieldset>
           </form>
           <div className={info.success ? "sectionForm__form__card" : "sectionForm__form__card hidden"}>
-            <p className=""> La tarjeta ha sido creada: </p>
-            <a href={url} className="" target="_blank" rel="noreferrer">
+            <p className='sectionForm__form__card--text'> La tarjeta ha sido creada: </p>
+            <a className='sectionForm__form__card--text' href={url} target="_blank" rel="noreferrer">
               {url}
             </a>
           </div>
-          {/* {card} */}
+          <p className={info.success ? "hidden" : "sectionForm__form__card--errorMsg"}>{card}</p>
         </section>
       </main>
       <footer className="footer">

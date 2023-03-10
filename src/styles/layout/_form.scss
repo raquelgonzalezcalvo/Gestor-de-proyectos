@@ -125,14 +125,17 @@
     }
 
     &__card {
-      color: white;
       text-align: center;
       padding: 20px;
-    }
-    &__errorMsg {
-      color: white;
-      text-align: center;
-      padding: 20px;
+      &--text {
+        color: white;
+        padding-bottom: 10px;
+      }
+      &--errorMsg {
+        padding-top: 20px;
+        text-align: center;
+        color: white;
+      }
     }
   }
 }
