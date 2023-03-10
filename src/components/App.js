@@ -1,6 +1,7 @@
 import "../styles/App.scss";
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
+import dataApi from '../services/api';
 import { useState } from "react";
 import logo from '../images/logo-adalab.png';
 // import cover2 from '../images/cover_2.jpeg';
@@ -17,49 +18,85 @@ function App() {
   // const [job, setJob] = useState("");
 
   const [data, setData] = useState({
-    name:"",
-    slogan:"",
-    repo:"",
-    demo:"",
-    technologies:"",
-    desc:"",
-    autor:"",
-    job:"",
+    name: "",
+    slogan: "",
+    repo: "",
+    demo: "",
+    technologies: "",
+    desc: "",
+    autor: "",
+    job: "",
+    image: "http://edap.es/wp-content/uploads/blog9-img-01.jpg",
+    photo: "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg"
   })
+
+  const [url, setUrl] = useState('');
+  const [info, setInfo] = useState('');
+  // const [card, setCard] = useState('');
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     if (inputName === "name") {
       setData({
-        ...data, name: inputValue});
+        ...data, name: inputValue
+      });
     } else if (inputName === "slogan") {
       setData({
-        ...data, slogan: inputValue});
+        ...data, slogan: inputValue
+      });
     } else if (inputName === "repo") {
       setData({
-        ...data, repo: inputValue});
+        ...data, repo: inputValue
+      });
     } else if (inputName === "demo") {
-     setData({
-        ...data, demo: inputValue});
+      setData({
+        ...data, demo: inputValue
+      });
     } else if (inputName === "technologies") {
       setData({
-        ...data, technologies: inputValue});
+        ...data, technologies: inputValue
+      });
     } else if (inputName === "desc") {
       setData({
-        ...data, desc: inputValue});
+        ...data, desc: inputValue
+      });
     } else if (inputName === "autor") {
       setData({
-        ...data, autor: inputValue});
+        ...data, autor: inputValue
+      });
     } else if (inputName === "job") {
       setData({
-        ...data, job: inputValue});
+        ...data, job: inputValue
+      });
     }
   };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
+
+  const handleClickSend = (ev) => {
+    dataApi(data)
+      .then(info => {
+        console.log(info);
+        setUrl(info.cardURL)
+        setInfo(info)
+        // errorMsg()
+      })
+  }
+
+  // const errorMsg = () => {
+  //   if (!info.error) {
+  //     if (info.error.includes('Mandatory fields:')) {
+  //       setCard(<p>Todos los campos son obligatorios, por favor revísalo</p>)
+  //     }
+  //   } else {
+  //     console.log(info)
+  //   }
+  // }
+
+
 
   return (
     <div className="container">
@@ -225,17 +262,19 @@ function App() {
             <fieldset className="sectionForm__form__button">
               <input
                 className="sectionForm__form__button--btnLarge"
-                onClick="{handleClickCreateCard}"
                 type="submit"
                 value="CREAR TARJETA"
+                onClick={handleClickSend}
               />
             </fieldset>
           </form>
-          <div className="sectionForm__form__card hidden">
+          <div className={info.success ? "sectionForm__form__card" : "sectionForm__form__card hidden"}>
             <p className=""> La tarjeta ha sido creada: </p>
-            <a href="" className="" target="_blank" rel="noreferrer">
+            <a href={url} className="" target="_blank" rel="noreferrer">
+              {url}
             </a>
           </div>
+          {/* {card} */}
         </section>
       </main>
       <footer className="footer">
