@@ -1,9 +1,13 @@
 import "../styles/App.scss";
-import cover from "../images/cover.jpeg";
-import user from "../images/user.jpeg";
+
+
 import dataApi from '../services/api';
 import { useState } from "react";
 import logo from '../images/logo-adalab.png';
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+import Preview from "./Main/Preview";
+import Form from "./Main/Form";
 // import cover2 from '../images/cover_2.jpeg';
 //pepino
 
@@ -97,205 +101,21 @@ function App() {
       })
   }
 
-  // const errorMsg = () => {
-  //   if (!info.error) {
-  //     if (info.error.includes('Mandatory fields:')) {
-  //       setCard(<p>Todos los campos son obligatorios, por favor revísalo</p>)
-  //     }
-  //   } else {
-  //     console.log(info)
-  //   }
-  // }
 
 
 
   return (
     <div className="container">
-      <header className="header">
-        <i className="fa-solid fa-laptop-code"></i>
-        <h1 className="header__text">Gestor de proyectos</h1>
-      </header>
+      <Header></Header>
       <main className="main">
-        <section className="preview">
-          <img className="preview__image" src={cover} alt="" />
-
-          <article className="preview__autor">
-            <div className="preview__autor__info-project">
-              <p className="preview__autor__info-project--subtitle">Personal Project Card</p>
-              {/* <hr className="line" /> */}
-
-              <h2 className="preview__autor__info-project--title">{data.name || "Elegant Workspace"}</h2>
-              <p className="preview__autor__info-project--slogan">{data.slogan || "Diseños Exclusivos"}</p>
-              <p className="preview__autor__info-project--desc">
-                {data.desc ||
-                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipi harum laboriosam"}
-              </p>
-              <div className="preview__autor__info-project--technologies">
-                <p className="preview__autor__info-project--technologies--text">{data.technologies || "React JS, MongoDB"}</p>
-              </div>
-              <div className="preview__autor__info-project--icons">
-                <a href={data.repo} target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-github-alt"></i>
-                </a>
-                <a href={data.demo} target="_blank" rel="noreferrer">
-                  <i className="fa-solid fa-globe"></i>
-                </a>
-              </div>
-            </div>
-
-            <div className="preview__autor__info-autor">
-              <img className="preview__autor__info-autor--image" src={user} alt="" />
-              <p className="preview__autor__info-autor--job">{data.job || "Full Stack Developer"}</p>
-              <p className="preview__autor__info-autor--name">{data.autor || "Emmelie Björklund"}</p>
-            </div>
-          </article>
-        </section>
-        <section className='sectionForm'>
-          <h2 className="sectionForm__title">Información</h2>
-          <form className="sectionForm__form" onSubmit={handleSubmit}>
-            <fieldset className="sectionForm__form__project">
-              <legend className="sectionForm__form__project--info">
-                Cuéntanos sobre el proyecto
-                {/* <hr className="line" /> */}
-              </legend>
-              <label htmlFor="name" className="sectionForm__form__project--label">Nombre del proyecto:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  placeholder="Ejemplo: Mi proyecto"
-                  name="name"
-                  id="name"
-                  value={data.name}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="slogan" className="sectionForm__form__project--label">Slogan:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  name="slogan"
-                  id="slogan"
-                  placeholder="Ejemplo: "
-                  value={data.slogan}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="repo" className="sectionForm__form__project--label">Repositorio:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  name="repo"
-                  id="repo"
-                  pattern='^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$'
-                  placeholder="Ejemplo: https://github.com/Adalab/my-project"
-                  value={data.repo}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="demo" className="sectionForm__form__project--label">Demo:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  placeholder="Ejemplo: http://beta.adalab.es/my-project/"
-                  name="demo"
-                  id="demo"
-                  pattern='^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$'
-                  value={data.demo}
-                  onChange={handleInput}
-                />
-                <p></p>
-              </label>
-              <label htmlFor="technologies" className="sectionForm__form__project--label">Tecnologías:
-                <input
-                  className="sectionForm__form__project--input"
-                  type="text"
-                  placeholder="Ejemplo: React - SASS - HTML"
-                  name="technologies"
-                  id="technologies"
-                  value={data.technologies}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="desc" className="sectionForm__form__project--label">Descripción:
-                <textarea
-                  className="sectionForm__form__project--textarea"
-                  type="text"
-                  placeholder="Ejemplo: Este es mi proyecto."
-                  name="desc"
-                  id="desc"
-                  value={data.desc}
-                  onChange={handleInput}
-                ></textarea>
-              </label>
-            </fieldset>
-
-            <fieldset className="sectionForm__form__autor">
-              <legend className="sectionForm__form__autor--info">
-                Cuéntanos sobre la autora
-                {/* <hr className="line" /> */}
-              </legend>
-              <label htmlFor="autor" className="sectionForm__form__project--label">Nombre:
-                <input
-                  className="sectionForm__form__autor--input"
-                  type="text"
-                  placeholder="Ejemplo: MariCarmen"
-                  name="autor"
-                  id="autor"
-                  value={data.autor}
-                  onChange={handleInput}
-                />
-              </label>
-              <label htmlFor="job" className="sectionForm__form__project--label">Profesión:
-                <input
-                  className="sectionForm__form__autor--input"
-                  type="text"
-                  placeholder="Ejemplo: Front-end developer"
-                  name="job"
-                  id="job"
-                  value={data.job}
-                  onChange={handleInput}
-                />
-              </label>
-            </fieldset>
-
-            <fieldset className="sectionForm__form__button">
-              <label className="sectionForm__form__button--btn" htmlFor="">Subir foto del proyecto</label>
-              <input
-                className="hidden"
-                type="button"
-                value="Subir foto de proyecto"
-              />
-              <label className="sectionForm__form__button--btn" htmlFor="">Subir foto de la autora</label>
-              <input
-                className="hidden"
-                type="button"
-                value="Subir foto de autora"
-              />
-            </fieldset>
-
-            <fieldset className="sectionForm__form__button">
-              <input
-                className="sectionForm__form__button--btnLarge"
-                type="submit"
-                value="CREAR TARJETA"
-                onClick={handleClickSend}
-              />
-            </fieldset>
-          </form>
-          <div className={info.success ? "sectionForm__form__card" : "sectionForm__form__card hidden"}>
-            <p className='sectionForm__form__card--text'> La tarjeta ha sido creada: </p>
-            <a className='sectionForm__form__card--text' href={url} target="_blank" rel="noreferrer">
-              {url}
-            </a>
-          </div>
-          <p className={info.success ? "hidden" : "sectionForm__form__card--errorMsg"}>{card}</p>
-        </section>
+        <Preview data={data}></Preview>
+        <Form handleSubmit={handleSubmit} handleInput={handleInput}
+        data={data}
+        info={info} url={url}
+        card={card}
+        ></Form>
       </main>
-      <footer className="footer">
-        <p className="footer__copy">Nombre del equipo</p>
-        <img src={logo} alt="Logo Adalab" className="footer__image" />
-      </footer>
-
+      <Footer logo = {logo}></Footer>
     </div>
   );
 }
