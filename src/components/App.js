@@ -9,17 +9,8 @@ import Footer from "./Footer/Footer";
 import Preview from "./Main/Preview";
 import Form from "./Main/Form";
 // import cover2 from '../images/cover_2.jpeg';
-//pepino
 
 function App() {
-  // const [name, setName] = useState("");
-  // const [slogan, setSlogan] = useState("");
-  // const [repo, setRepo] = useState("");
-  // const [demo, setDemo] = useState("");
-  // const [technologies, setTechnologies] = useState("");
-  // const [desc, setDesc] = useState("");
-  // const [autor, setAutor] = useState("");
-  // const [job, setJob] = useState("");
 
   const [data, setData] = useState({
     name: "",
@@ -76,10 +67,6 @@ function App() {
     }
   };
 
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
-  }
-
   const handleClickSend = (ev) => {
     dataApi(data)
       .then(info => {
@@ -102,20 +89,18 @@ function App() {
   }
 
 
-
-
   return (
     <div className="container">
       <Header></Header>
       <main className="main">
         <Preview data={data}></Preview>
-        <Form handleSubmit={handleSubmit} handleInput={handleInput}
-        data={data}
-        info={info} url={url}
-        card={card}
+        <Form handleInput={handleInput}
+          data={data}
+          info={info} url={url}
+          card={card}
         ></Form>
       </main>
-      <Footer logo = {logo}></Footer>
+      <Footer logo={logo}></Footer>
     </div>
   );
 }
