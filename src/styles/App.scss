@@ -5,24 +5,10 @@
 @import "./layout/form";
 @import "./layout/footer";
 
-.main {
-  @media all and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    min-width: 50vw;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-}
-
-.main .input::placeholder,
-.textarea::placeholder {
-  color: #ffffff;
-}
-
-.main .preview {
-  // padding: 20px;
-}
+// .main .input::placeholder,
+// .textarea::placeholder {
+//   color: #ffffff;
+// }
 
 // .btn-color {
 //   border-radius: 20px;

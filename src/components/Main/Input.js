@@ -1,4 +1,11 @@
-function Input({ htmlFor, placeholder, data, handleInput, pattern, text }) {
+function Input({ htmlFor, placeholder, data, pattern, text, handleChangeInput }) {
+
+  const changeInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    handleChangeInput(inputValue, inputName)
+  }
+
   const elementPattern = pattern === undefined ? null : pattern
   return (
     <label htmlFor={htmlFor} className="sectionForm__form__project--label">{text}
@@ -9,7 +16,7 @@ function Input({ htmlFor, placeholder, data, handleInput, pattern, text }) {
         name={htmlFor}
         id={htmlFor}
         value={data.name}
-        onChange={handleInput}
+        onChange={changeInput}
         pattern={elementPattern}
       />
     </label>

@@ -29,53 +29,13 @@ function App() {
   const [info, setInfo] = useState('');
   const [card, setCard] = useState('');
 
-  const handleInput = (ev) => {
-    const inputValue = ev.target.value;
-    const inputName = ev.target.name;
-    if (inputName === "name") {
-      setData({
-        ...data, name: inputValue
-      });
-    } else if (inputName === "slogan") {
-      setData({
-        ...data, slogan: inputValue
-      });
-    } else if (inputName === "repo") {
-      setData({
-        ...data, repo: inputValue
-      });
-    } else if (inputName === "demo") {
-      setData({
-        ...data, demo: inputValue
-      });
-    } else if (inputName === "technologies") {
-      setData({
-        ...data, technologies: inputValue
-      });
-    } else if (inputName === "desc") {
-      setData({
-        ...data, desc: inputValue
-      });
-    } else if (inputName === "autor") {
-      setData({
-        ...data, autor: inputValue
-      });
-    } else if (inputName === "job") {
-      setData({
-        ...data, job: inputValue
-      });
-    }
-  };
+  const handleInput = (inputValue, inputName) => {
+    setData({
+      ...data, [inputName]: inputValue
+    });
+  }
 
-  // const handleInput = (ev) => {
-  //   const inputValue = ev.target.value;
-  //   const inputName = ev.target.name;
-  //   setData({
-  //     ...data, [inputName]: inputValue
-  //   });
-  // }
-
-  const handleClickSend = (ev) => {
+  const handleSend = () => {
     dataApi(data)
       .then(info => {
         console.log(info);
@@ -89,7 +49,9 @@ function App() {
           } else {
             setCard('Lo sentimos, ha ocurrido un error, inténtelo de nuevo más tarde.');
           }
-        } else {
+          setUrl('')
+          setInfo('')
+        } else if (info.success) {
           setUrl(info.cardURL)
           setInfo(info)
         }
@@ -102,10 +64,12 @@ function App() {
       <Header></Header>
       <main className="main">
         <Preview data={data}></Preview>
-        <Form handleInput={handleInput}
+        <Form handleChangeInput={handleInput}
           data={data}
           info={info} url={url}
           card={card}
+          handle={handleSend}
+
         ></Form>
       </main>
       <Footer logo={logo}></Footer>

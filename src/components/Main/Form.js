@@ -1,10 +1,20 @@
+import Button from './Button';
+import ButtonCreateCard from './ButtonCreateCard';
 import Input from "./Input";
 
-function Form({ data, handleInput, handleClickSend, info, url, card }) {
+function Form({ data, handle, info, url, card, handleChangeInput }) {
+
+
+  const changeInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    handleChangeInput(inputValue, inputName)
+  }
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
+
 
   return (
     <section className='sectionForm'>
@@ -14,19 +24,20 @@ function Form({ data, handleInput, handleClickSend, info, url, card }) {
           <legend className="sectionForm__form__project--info">
             Cuéntanos sobre el proyecto
           </legend>
-          <Input htmlFor={'name'} placeholder={"Ejemplo: Mi proyecto"} data={data.name} handleInput={handleInput}
+          <Input htmlFor={'name'} placeholder={"Ejemplo: Mi proyecto"} data={data.name} handleChangeInput={handleChangeInput}
             text={'Nombre del proyecto:'}></Input>
 
-          <Input htmlFor={"slogan"} placeholder={"Ejemplo: "} data={data.slogan} handleInput={handleInput}
+          <Input htmlFor={"slogan"} placeholder={"Ejemplo: "} data={data.slogan}
+            handleChangeInput={handleChangeInput}
             text={'Slogan:'}></Input>
 
-          <Input htmlFor={"repo"} placeholder={"Ejemplo: https://github.com/Adalab/my-project"} data={data.repo} handleInput={handleInput}
+          <Input htmlFor={"repo"} placeholder={"Ejemplo: https://github.com/Adalab/my-project"} data={data.repo} handleChangeInput={handleChangeInput}
             text={'Repositorio:'} pattern='^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$'></Input>
 
-          <Input htmlFor={"demo"} placeholder={"Ejemplo: http://beta.adalab.es/my-project/"} data={data.demo} handleInput={handleInput}
+          <Input htmlFor={"demo"} placeholder={"Ejemplo: http://beta.adalab.es/my-project/"} data={data.demo} handleChangeInput={handleChangeInput}
             text={"Demo:"} pattern='^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$'></Input>
 
-          <Input htmlFor={"technologies"} placeholder={"Ejemplo: React - SASS - HTML"} data={data.technologies} handleInput={handleInput}
+          <Input htmlFor={"technologies"} placeholder={"Ejemplo: React - SASS - HTML"} data={data.technologies} handleChangeInput={handleChangeInput}
             text={"Tecnologías:"}></Input>
 
           <label htmlFor="desc" className="sectionForm__form__project--label">Descripción:
@@ -37,7 +48,7 @@ function Form({ data, handleInput, handleClickSend, info, url, card }) {
               name="desc"
               id="desc"
               value={data.desc}
-              onChange={handleInput}
+              onChange={changeInput}
             ></textarea>
           </label>
         </fieldset>
@@ -47,40 +58,31 @@ function Form({ data, handleInput, handleClickSend, info, url, card }) {
             Cuéntanos sobre la autora
 
           </legend>
-          <Input htmlFor={"autor"} placeholder={"Ejemplo: MariCarmen"} data={data.autor} handleInput={handleInput}
+          <Input htmlFor={"autor"} placeholder={"Ejemplo: MariCarmen"} data={data.autor} handleChangeInput={handleChangeInput}
             text={"Nombre:"}></Input>
 
-          <Input htmlFor={"job"} placeholder={"Ejemplo: Front-end developer"} data={data.job} handleInput={handleInput}
+          <Input htmlFor={"job"} placeholder={"Ejemplo: Front-end developer"} data={data.job} handleChangeInput={handleChangeInput}
             text={"Profesión:"}></Input>
         </fieldset>
-
         <fieldset className="sectionForm__form__button">
-          <label className="sectionForm__form__button--btn" htmlFor="">Subir foto del proyecto</label>
-          <input
-            className="hidden"
-            type="button"
-            value="Subir foto de proyecto"
+          <Button
+            htmlFor="project"
+            text='Subir foto del proyecto'
           />
-          <label className="sectionForm__form__button--btn" htmlFor="">Subir foto de la autora</label>
-          <input
-            className="hidden"
-            type="button"
-            value="Subir foto de autora"
+          <Button
+            htmlFor="autor"
+            text='Subir foto de la autora'
           />
         </fieldset>
-
         <fieldset className="sectionForm__form__button">
-          <input
-            className="sectionForm__form__button--btnLarge"
-            type="submit"
-            value="CREAR TARJETA"
-            onClick={handleClickSend}
+          < ButtonCreateCard
+            handle={handle}
           />
         </fieldset>
       </form>
       <div className={info.success ? "sectionForm__form__card" : "sectionForm__form__card hidden"}>
         <p className='sectionForm__form__card--text'> La tarjeta ha sido creada: </p>
-        <a className='sectionForm__form__card--text' href={url} target="_blank" rel="noreferrer">
+        <a className='sectionForm__form__card--link' href={url} target="_blank" rel="noreferrer">
           {url}
         </a>
       </div>

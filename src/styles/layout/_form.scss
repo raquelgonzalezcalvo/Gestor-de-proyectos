@@ -15,7 +15,6 @@
   &__form {
     background-color: #302c42;
 
-    //width: 100%;
     &__project {
       display: flex;
       flex-direction: column;
@@ -109,6 +108,7 @@
         height: 43px;
         background-color: #978bc6;
         border-radius: 40px;
+        cursor: pointer;
       }
 
       &--btnLarge {
@@ -121,6 +121,7 @@
         border-radius: 40px;
         width: 200px;
         border: solid 2px #dbd3f8;
+        cursor: pointer;
       }
     }
 
@@ -130,6 +131,11 @@
       &--text {
         color: white;
         padding-bottom: 10px;
+      }
+      &--link {
+        color: white;
+        padding-bottom: 10px;
+        cursor: pointer;
       }
       &--errorMsg {
         padding-top: 20px;

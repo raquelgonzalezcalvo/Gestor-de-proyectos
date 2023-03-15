@@ -15,7 +15,6 @@
     background-color: white;
     color: #3e3e3e;
     width: 90%;
-    // height: 50%;
     transform: translateY(-45px);
     margin: auto;
     border-radius: 1.5rem;
@@ -29,7 +28,6 @@
     @media all and (min-width: 768px) {
       transform: translateY(-55px);
     }
-    // overflow-y: scroll;
 
     &__info-project {
       width: 60%;
@@ -96,6 +94,7 @@
 .fa-brands,
 .fa-solid {
   font-size: 18px;
+  cursor: pointer;
 }
 // OPCION DE TRASNFORMARLA EN UN BORDER BOTTOM
 // .info-project .line {
