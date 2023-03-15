@@ -67,6 +67,14 @@ function App() {
     }
   };
 
+  // const handleInput = (ev) => {
+  //   const inputValue = ev.target.value;
+  //   const inputName = ev.target.name;
+  //   setData({
+  //     ...data, [inputName]: inputValue
+  //   });
+  // }
+
   const handleClickSend = (ev) => {
     dataApi(data)
       .then(info => {
