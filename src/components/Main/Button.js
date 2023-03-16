@@ -1,14 +1,12 @@
-function Button({ htmlFor, text }) {
+import GetAvatar from "./GetAvatar";
+import { useState } from 'react';
+
+function Button({ htmlFor, text, avatar, updateAvatar, project, updateProject }) {
+  
   return (
-    <label className="sectionForm__form__button--btn" htmlFor={htmlFor}>{text}
-      <input
-        name={htmlFor}
-        id={htmlFor}
-        className="hidden"
-        type="button"
-        value={text}
-      />
-    </label>
+    
+      <GetAvatar htmlFor={htmlFor} text={text} avatar={avatar} updateAvatar={updateAvatar} project={project} updateProject={updateProject}></GetAvatar>
+   
   )
 }
 

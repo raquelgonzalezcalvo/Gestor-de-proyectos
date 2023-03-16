@@ -2,7 +2,7 @@ import Button from './Button';
 import ButtonCreateCard from './ButtonCreateCard';
 import Input from "./Input";
 
-function Form({ data, handle, info, url, card, handleChangeInput }) {
+function Form({ data, handle, info, url, card, handleChangeInput, avatar, updateAvatar, project, updateProject}) {
 
 
   const changeInput = (ev) => {
@@ -67,11 +67,15 @@ function Form({ data, handle, info, url, card, handleChangeInput }) {
         <fieldset className="sectionForm__form__button">
           <Button
             htmlFor="project"
-            text='Subir foto del proyecto'
+            text='Subir foto de la autora'
+            avatar={avatar}
+            updateAvatar={updateAvatar}
           />
           <Button
             htmlFor="autor"
-            text='Subir foto de la autora'
+            text='Subir foto del proyecto'
+            project={project}
+            updateProject={updateProject}
           />
         </fieldset>
         <fieldset className="sectionForm__form__button">
