@@ -2,10 +2,11 @@ import dataApi from '../../services/api';
 import { useState } from "react";
 import Preview from "./Preview";
 import Form from "./Form";
+import objectToExport from '../../services/localStorage';
 
 function CreateProject() {
   const [data, setData] = useState({
-    name: "",
+    name: objectToExport.get('name', {}) || '',
     slogan: "",
     repo: "",
     demo: "",
@@ -23,23 +24,30 @@ function CreateProject() {
 
   const [avatar, setAvatar] = useState('');
   const updateAvatar = (avatar) => {
+    // const photo = data.photo
     setAvatar(avatar);
     setData({
       ...data, photo: avatar
     });
+    objectToExport.set('photo', avatar)
   };
 
   const [project, setProject] = useState('');
   const updateProject = (project) => {
+    // const image = data.image
     setProject(project);
     setData({
       ...data, image: project
     });
+    objectToExport.set('image', project)
   };
+
+
   const handleInput = (inputValue, inputName) => {
     setData({
       ...data, [inputName]: inputValue
     });
+    objectToExport.set(inputName, inputValue)
   }
 
   const handleSend = () => {
