@@ -24,12 +24,17 @@ function CreateProject() {
   const [avatar, setAvatar] = useState('');
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
-
+    setData({
+      ...data, photo: avatar
+    });
   };
 
   const [project, setProject] = useState('');
   const updateProject = (project) => {
     setProject(project);
+    setData({
+      ...data, image: project
+    });
   };
   const handleInput = (inputValue, inputName) => {
     setData({
