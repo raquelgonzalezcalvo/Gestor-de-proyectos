@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../../images/user.jpeg';
-//import '../../styles/layout/Profile.scss';
+// import defaultAvatar from '../images/defaultAvatar.png';
+// import '../stylesheets/Profile.css';
 
 function Profile(props) {
-  const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
+  // const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
   return (
-    
-      <div
-        className="preview__image"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div>
-
+    <div
+      className={props.className}
+      style={{ backgroundImage: `url(${props.avatar})` }}
+    ></div>
   );
 }
 

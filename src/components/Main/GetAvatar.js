@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../../images/user.jpeg';
-import '../../styles/layout/GetAvatar.scss';
+//import defaultAvatar from '../images/defaultAvatar.png';
+//import '../stylesheets/GetAvatar.css';
 
 function GetAvatar(props) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
@@ -58,15 +58,15 @@ function GetAvatar(props) {
     props.updateAvatar(image);
   };
 
-  const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
+  //const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
   return (
-    <div className="get-avatar hidden">
-      <label className="sectionForm__form__button--btn" htmlFor={props.htmlFor}>{props.text}
-
+    <>
+      <label className="sectionForm__form__button--btn" htmlfor={props.htmlFor}>
+        {props.text}
         <input
           type="file"
           ref={myFileField}
-          className="get-avatar__upload-field"
+          className="hidden"
           id={props.htmlFor}
           onChange={uploadImage}
         />
@@ -74,9 +74,9 @@ function GetAvatar(props) {
 
       {/* <div
         className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
+        style={{ backgroundImage: `url(${props.avatar})` }}
       ></div> */}
-    </div>
+    </>
   );
 }
 

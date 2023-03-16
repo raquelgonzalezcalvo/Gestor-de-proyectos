@@ -1,7 +1,6 @@
-import user from "../../images/user.jpeg";
 import Profile from './Profile';
 
-function Card({ data, avatar }) {
+function Card({ data, avatar, className }) {
   return (
     <article className="preview__autor">
       <div className="preview__autor__info-project">
@@ -28,7 +27,8 @@ function Card({ data, avatar }) {
       </div>
 
       <div className="preview__autor__info-autor">
-        <Profile avatar={avatar} />
+        <Profile avatar={avatar} className={'preview__autor__info-autor--image'} />
+        {/* <img className="preview__autor__info-autor--image" src={user} alt="Foto del autor" title="Foto del autor" /> */}
         <p className="preview__autor__info-autor--job">{data.job || "Full Stack Developer"}</p>
         <p className="preview__autor__info-autor--name">{data.autor || "Emmelie Björklund"}</p>
       </div>

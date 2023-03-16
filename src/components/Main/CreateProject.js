@@ -3,7 +3,7 @@ import { useState } from "react";
 import Preview from "./Preview";
 import Form from "./Form";
 
-function CreateProject ({}) {
+function CreateProject() {
   const [data, setData] = useState({
     name: "",
     slogan: "",
@@ -13,8 +13,8 @@ function CreateProject ({}) {
     desc: "",
     autor: "",
     job: "",
-    image: "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
-    photo: "http://edap.es/wp-content/uploads/blog9-img-01.jpg"
+    image: "",
+    photo: ""
   })
 
   const [url, setUrl] = useState('');
@@ -22,15 +22,15 @@ function CreateProject ({}) {
   const [card, setCard] = useState('');
 
   const [avatar, setAvatar] = useState('');
-  const [project, setProject] = useState('');
-
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
+
   };
+
+  const [project, setProject] = useState('');
   const updateProject = (project) => {
     setProject(project);
   };
-
   const handleInput = (inputValue, inputName) => {
     setData({
       ...data, [inputName]: inputValue
@@ -59,22 +59,19 @@ function CreateProject ({}) {
         }
       })
   }
-
-    return(
- <main className="main">
-        <Preview data={data} avatar={avatar} project={project}
-        ></Preview>
-        <Form handleChangeInput={handleInput}
-          data={data}
-          info={info} url={url}
-          card={card}
-          handle={handleSend}
-          updateAvatar={updateAvatar}
-          avatar={avatar}
-          project={project}
-          updateProject={updateProject}
-        ></Form>
-    </main>
-  )  
+  return <main className="main">
+    <Preview data={data} project={project} avatar={avatar} ></Preview>
+    <Form handleChangeInput={handleInput}
+      data={data}
+      info={info} url={url}
+      card={card}
+      handle={handleSend}
+      avatar={avatar}
+      updateAvatar={updateAvatar}
+      project={project}
+      updateProject={updateProject}
+    ></Form>
+  </main>
 }
+
 export default CreateProject;

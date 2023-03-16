@@ -1,15 +1,14 @@
-import cover from "../../images/cover.jpeg";
-import Card from "./Card";
-import Profile from "./Profile";
-import { useState } from "react";
 
-function Preview({ data, avatar, project }) {
-  
+import Card from "./Card";
+import Profile from './Profile';
+
+function Preview({ data, project, avatar, className }) {
   return (
     <section className="preview">
-      <Profile project={project}></Profile>
-      {/* <img className="preview__image" src={} alt="Foto del proyecto" title="Foto del proyecto" /> */}
-      <Card avatar={avatar} data={data}></Card>
+      <Profile avatar={project} className={'preview__image'} />
+      {/* <img className="preview__image" src={cover} alt="Foto del proyecto" title="Foto del proyecto" /> */}
+      <Card data={data} avatar={avatar}
+      ></Card>
     </section>
   )
 }

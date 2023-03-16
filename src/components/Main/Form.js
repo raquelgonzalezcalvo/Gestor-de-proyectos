@@ -1,8 +1,9 @@
-import Button from './Button';
+
 import ButtonCreateCard from './ButtonCreateCard';
+import GetAvatar from './GetAvatar';
 import Input from "./Input";
 
-function Form({ data, handle, info, url, card, handleChangeInput, avatar, updateAvatar, project, updateProject}) {
+function Form({ data, handle, info, url, card, handleChangeInput, avatar, updateAvatar, project, updateProject }) {
 
 
   const changeInput = (ev) => {
@@ -14,7 +15,6 @@ function Form({ data, handle, info, url, card, handleChangeInput, avatar, update
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
-
 
   return (
     <section className='sectionForm'>
@@ -65,17 +65,15 @@ function Form({ data, handle, info, url, card, handleChangeInput, avatar, update
             text={"Profesión:"}></Input>
         </fieldset>
         <fieldset className="sectionForm__form__button">
-          <Button
-            htmlFor="project"
+          <GetAvatar htmlFor="project"
+            text='Subir foto del proyecto'
+            avatar={project}
+            updateAvatar={updateProject}
+          />
+          <GetAvatar htmlFor="autor"
             text='Subir foto de la autora'
             avatar={avatar}
             updateAvatar={updateAvatar}
-          />
-          <Button
-            htmlFor="autor"
-            text='Subir foto del proyecto'
-            project={project}
-            updateProject={updateProject}
           />
         </fieldset>
         <fieldset className="sectionForm__form__button">
