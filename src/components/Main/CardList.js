@@ -1,0 +1,19 @@
+import Card from './Card';
+
+
+function CardList({ cardsToShowP }) {
+
+  const loqsea = cardsToShowP.map((eachCard) => {
+    return <li>
+      <Card data={eachCard} avatar={eachCard.photo} />
+    </li>
+  })
+
+  return (
+    <ul>
+      {loqsea}
+    </ul>
+  )
+}
+
+export default CardList;

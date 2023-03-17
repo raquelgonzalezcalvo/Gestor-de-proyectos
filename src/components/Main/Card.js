@@ -1,12 +1,11 @@
 import Profile from './Profile';
 
-function Card({ data, avatar, className }) {
+function Card({ data, avatar }) {
+
   return (
     <article className="preview__autor">
       <div className="preview__autor__info-project">
         <p className="preview__autor__info-project--subtitle">Personal Project Card</p>
-        {/* <hr className="line" /> */}
-
         <h2 className="preview__autor__info-project--title">{data.name || "Elegant Workspace"}</h2>
         <p className="preview__autor__info-project--slogan">{data.slogan || "Diseños Exclusivos"}</p>
         <p className="preview__autor__info-project--desc">
@@ -28,7 +27,6 @@ function Card({ data, avatar, className }) {
 
       <div className="preview__autor__info-autor">
         <Profile avatar={avatar} className={'preview__autor__info-autor--image'} />
-        {/* <img className="preview__autor__info-autor--image" src={user} alt="Foto del autor" title="Foto del autor" /> */}
         <p className="preview__autor__info-autor--job">{data.job || "Full Stack Developer"}</p>
         <p className="preview__autor__info-autor--name">{data.autor || "Emmelie Björklund"}</p>
       </div>

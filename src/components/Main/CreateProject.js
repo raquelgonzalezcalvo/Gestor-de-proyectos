@@ -6,7 +6,7 @@ import objectToExport from '../../services/localStorage';
 
 function CreateProject() {
   const [data, setData] = useState({
-    name: objectToExport.get('name', {}) || '',
+    name: '',
     slogan: "",
     repo: "",
     demo: "",
@@ -21,25 +21,23 @@ function CreateProject() {
   const [url, setUrl] = useState('');
   const [info, setInfo] = useState('');
   const [card, setCard] = useState('');
-
   const [avatar, setAvatar] = useState('');
+
+  const projectsCard = objectToExport.get('cardsLs', [])
+
   const updateAvatar = (avatar) => {
-    // const photo = data.photo
     setAvatar(avatar);
     setData({
       ...data, photo: avatar
     });
-    objectToExport.set('photo', avatar)
   };
 
   const [project, setProject] = useState('');
   const updateProject = (project) => {
-    // const image = data.image
     setProject(project);
     setData({
       ...data, image: project
     });
-    objectToExport.set('image', project)
   };
 
 
@@ -47,7 +45,6 @@ function CreateProject() {
     setData({
       ...data, [inputName]: inputValue
     });
-    objectToExport.set(inputName, inputValue)
   }
 
   const handleSend = () => {
@@ -69,6 +66,8 @@ function CreateProject() {
         } else if (info.success) {
           setUrl(info.cardURL)
           setInfo(info)
+          projectsCard.push(data)
+          objectToExport.set('cardsLs', projectsCard)
         }
       })
   }
