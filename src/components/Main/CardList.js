@@ -1,19 +1,15 @@
-import Card from './Card';
-
+import Card from "./Card";
 
 function CardList({ cardsToShowP }) {
-
   const loqsea = cardsToShowP.map((eachCard) => {
-    return <li>
-      <Card data={eachCard} avatar={eachCard.photo} />
-    </li>
-  })
+    return (
+      <li>
+        <Card data={eachCard} avatar={eachCard.photo} />
+      </li>
+    );
+  });
 
-  return (
-    <ul>
-      {loqsea}
-    </ul>
-  )
+  return <ul className="ulCard">{loqsea}</ul>;
 }
 
 export default CardList;

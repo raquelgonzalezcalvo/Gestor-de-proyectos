@@ -1,15 +1,23 @@
-function Input({ htmlFor, placeholder, data, pattern, text, handleChangeInput }) {
-
+function Input({
+  htmlFor,
+  placeholder,
+  data,
+  pattern,
+  text,
+  handleChangeInput,
+}) {
   const changeInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    handleChangeInput(inputValue, inputName)
-  }
+    handleChangeInput(inputValue, inputName);
+  };
 
-  const elementPattern = pattern === undefined ? null : pattern
+  const elementPattern = pattern === undefined ? null : pattern;
   return (
-    <label htmlFor={htmlFor} className="sectionForm__form__project--label">{text}
+    <label htmlFor={htmlFor} className="sectionForm__form__project--label">
+      {text}
       <input
+        required
         className="sectionForm__form__project--input"
         type="text"
         placeholder={placeholder}
@@ -20,6 +28,6 @@ function Input({ htmlFor, placeholder, data, pattern, text, handleChangeInput })
         pattern={elementPattern}
       />
     </label>
-  )
+  );
 }
 export default Input;
