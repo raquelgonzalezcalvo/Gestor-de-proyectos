@@ -9,14 +9,14 @@ import Landing from "./Main/Landing";
 function App() {
 
   return (
-    <div className="container">
+    <>
       <Header></Header>
       <Routes>
         <Route path="/create" element={<CreateProject />} />
         <Route path="/" element={<Landing />} />
       </Routes>
       <Footer logo={logo}></Footer>
-    </div>
+    </>
   );
 }
 

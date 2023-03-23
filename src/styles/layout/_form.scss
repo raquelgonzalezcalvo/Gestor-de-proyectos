@@ -1,7 +1,9 @@
 .sectionForm {
+  margin-top: -45px;
   margin-bottom: 30px;
 
   @media all and (min-width: 768px) {
+    margin-top: 0;
     width: 40%;
   }
 
@@ -76,6 +78,7 @@
         margin-bottom: 20px;
         padding-bottom: 10px;
         border-bottom: solid 1px white;
+        font-family: "Roboto Mono", monospace;
       }
 
       &--input {
@@ -124,6 +127,7 @@
         border-radius: 40px;
         width: 200px;
         border: solid 2px #dbd3f8;
+        font-family: "Roboto Mono", monospace;
         cursor: pointer;
       }
     }

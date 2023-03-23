@@ -7,19 +7,18 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
     height: 70vh;
     @media all and (min-width: 768px) {
-      height: 80vh;
+      height: 100vh;
     }
   }
 
   &__autor {
     background-color: white;
     color: #3e3e3e;
-    width: 90%;
-    transform: translateY(-45px);
-    margin: auto;
+    width: 100%;
+    position: relative;
+    bottom: 70px;
     border-radius: 1.5rem;
     display: flex;
     flex-direction: row-reverse;
@@ -28,8 +27,12 @@
     align-items: flex-start;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    transform: scale(80%);
     @media all and (min-width: 768px) {
-      transform: translateY(-55px);
+      transform: scale(95%);
+      margin: auto;
+      max-width: 700px;
+      width: 90%;
     }
 
     &__info-project {
@@ -44,27 +47,30 @@
       &--title {
         font-size: 18px;
         color: black;
-        margin-bottom: 0.3rem;
+        margin-bottom: 10px;
       }
       &--slogan {
-        font-size: 15px;
-        margin-bottom: 0.8rem;
+        font-size: 16px;
+        margin-bottom: 10px;
       }
       &--desc {
-        font-size: 15px;
-        margin-bottom: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
       }
       &--technologies {
         background-color: lightgray;
         border-radius: 20px;
-        font-size: 15px;
-        padding: 10px;
+        font-size: 16px;
+        padding: 5px;
         text-align: center;
+        margin-bottom: 15px;
       }
       &--icons {
-        font-size: 1rem;
+        font-size: 20px;
         text-align: center;
         padding-top: 7px;
+        cursor: pointer;
+        color: black;
         .fa-github-alt {
           padding-right: 10px;
         }
@@ -80,17 +86,21 @@
       &--image {
         border: solid 2px #302c42;
         border-radius: 20%;
-        width: 140px;
-        height: 200px;
+        width: 100px;
+        height: 160px;
         margin-bottom: 5px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        @media (min-width: 768px) {
+          width: 140px;
+          height: 200px;
+        }
       }
       &--job {
         font-weight: bold;
         color: black;
-        font-size: 0.7rem;
+        font-size: 1rem;
         margin-bottom: 5px;
       }
       &--name {
@@ -99,22 +109,6 @@
     }
   }
 }
-
-.fa-brands,
-.fa-solid {
-  font-size: 18px;
-  cursor: pointer;
+.cardLink {
+  color: black;
 }
-// OPCION DE TRASNFORMARLA EN UN BORDER BOTTOM
-// .info-project .line {
-//     width: 100%;
-//     border: 0;
-//     height: 1px;
-
-//     background-image: linear-gradient(
-//       to right,
-//       rgba(255, 255, 255, 0),
-//       rgba(1, 1, 1, 0.75),
-//       rgba(255, 255, 255, 0)
-//     );
-//   }

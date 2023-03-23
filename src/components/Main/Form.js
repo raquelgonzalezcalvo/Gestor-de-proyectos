@@ -43,7 +43,7 @@ function Form({
           <p className="msgError">{msgError.name}</p>
           <Input
             htmlFor={"slogan"}
-            placeholder={"Ejemplo: "}
+            placeholder={"Ejemplo: Crea proyectos sin límites"}
             data={data.slogan}
             handleChangeInput={handleChangeInput}
             text={"Slogan:"}

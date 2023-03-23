@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <img src={logoTeam} alt="Logo Equipo" className="footer__image" />
-      <img src={logoProject} alt="Logo Adalab" className="footer__image" />
+      <img src={logoProject} alt="Logo Adalab" className="footer__image logo" />
     </footer>
   );
 }

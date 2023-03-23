@@ -8,23 +8,23 @@ function Card({ data, avatar, imageProfile }) {
           Personal Project Card
         </p>
         <h2 className="preview__autor__info-project--title">
-          {data.name || "Elegant Workspace"}
+          {data.name || "Gestor de Proyectos"}
         </h2>
         <p className="preview__autor__info-project--slogan">
-          {data.slogan || "Diseños Exclusivos"}
+          {data.slogan || "Emprende tus proyectos sin límites"}
         </p>
         <p className="preview__autor__info-project--desc">
           {data.desc ||
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipi harum laboriosam"}
+            "Nuestra web es un gestor de proyectos online que te permite organizar tus proyectos de forma inteligente y eficiente con solo crear una tarjeta para cada uno."}
         </p>
         <div className="preview__autor__info-project--technologies">
           <p className="preview__autor__info-project--technologies--text">
-            {data.technologies || "React JS, MongoDB"}
+            {data.technologies || "React JS, SASS"}
           </p>
         </div>
         <div className="preview__autor__info-project--icons">
           <a
-            className={data.repo === "" ? "hidden" : ""}
+            className={data.repo === "" ? "hidden" : "cardLink"}
             href={data.repo}
             target="_blank"
             rel="noreferrer"
@@ -32,7 +32,7 @@ function Card({ data, avatar, imageProfile }) {
             <i className="fa-brands fa-github-alt"></i>
           </a>
           <a
-            className={data.demo === "" ? "hidden" : ""}
+            className={data.demo === "" ? "hidden" : "cardLink"}
             href={data.demo}
             target="_blank"
             rel="noreferrer"
@@ -52,7 +52,7 @@ function Card({ data, avatar, imageProfile }) {
           {data.job || "Full Stack Developer"}
         </p>
         <p className="preview__autor__info-autor--name">
-          {data.autor || "Emmelie Björklund"}
+          {data.autor || "Pepa Miguez"}
         </p>
       </div>
     </article>
