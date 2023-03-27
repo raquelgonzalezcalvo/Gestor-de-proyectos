@@ -43,7 +43,7 @@ function CreateProject() {
     setAvatar(avatar);
     setData({
       ...data,
-      photo: avatar,
+      image: avatar,
     });
   };
 
@@ -52,7 +52,7 @@ function CreateProject() {
     setProject(project);
     setData({
       ...data,
-      image: project,
+      photo: project,
     });
   };
 
