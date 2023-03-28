@@ -1,9 +1,10 @@
 import Preview from "./Preview";
 
-function CardDetail() {
+function CardDetail({ foundCard }) {
   return (
     <div>
-      <Preview />
+      <Preview foundCard={(foundCard = { foundCard })} />
+      <p>hola</p>
     </div>
   );
 }

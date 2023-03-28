@@ -6,7 +6,7 @@ import objectToExport from "../../services/localStorage";
 import imageProfile from "../../images/secretaria.png";
 import imageProject from "../../images/project.jpg";
 
-function CreateProject() {
+function CreateProject({ projectsCard }) {
   const [data, setData] = useState({
     name: "",
     slogan: "",
@@ -36,8 +36,6 @@ function CreateProject() {
   const [info, setInfo] = useState("");
   const [card, setCard] = useState("");
   const [avatar, setAvatar] = useState("");
-
-  const projectsCard = objectToExport.get("cardsLs", []);
 
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
@@ -93,15 +91,7 @@ function CreateProject() {
       setError(" ");
     }
   };
-  // const validateRequired = (inputValue, setError, field) => {
-  //   if (!inputValue) {
-  //     const clonedErrorMessages = { ...errorMessage };
-  //     clonedErrorMessages[field] = "* Campo requerido";
-  //     setError(clonedErrorMessages);
-  //   } else {
-  //     setError(" ");
-  //   }
-  // };
+
   const handleSend = () => {
     dataApi(data).then((info) => {
       console.log(info);
@@ -135,6 +125,7 @@ function CreateProject() {
       }
     });
   };
+
   return (
     <main className="main">
       <Preview

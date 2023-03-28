@@ -3,7 +3,7 @@ import objectToExport from "../../services/localStorage";
 import CardList from "./CardList";
 import "../../styles/layout/Landing.scss";
 
-function Landing() {
+function Landing({ foundCard, idCard }) {
   const projectsCard = objectToExport.get("cardsLs", []);
 
   const cardsToShow = projectsCard.slice(0, 4);
@@ -20,7 +20,11 @@ function Landing() {
         </label>
       </section>
       <section className="mainLanding__sectionCard">
-        <CardList cardsToShowP={cardsToShow} />
+        <CardList
+          cardsToShowP={cardsToShow}
+          foundCard={foundCard}
+          idCard={idCard}
+        />
       </section>
     </main>
   );
