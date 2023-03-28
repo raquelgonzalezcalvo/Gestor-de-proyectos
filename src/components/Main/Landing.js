@@ -7,12 +7,10 @@ function Landing({ foundCard, idCard }) {
   const projectsCard = objectToExport.get("cardsLs", []);
 
   const cardsToShow = projectsCard.slice(0, 4);
-  console.log(cardsToShow);
 
   return (
     <main className="mainLanding">
       <section className="mainLanding__section">
-        {/* <label className="sectionForm__form__button--btn"> */}
         <label className="btn">
           <Link className="mainLanding__link" to="/create">
             Crea un nuevo proyecto

@@ -8,18 +8,20 @@ import Landing from "./Main/Landing";
 import CardDetail from "./Main/CardDetail";
 import objectToExport from "../services/localStorage";
 import { useLocation, matchPath } from "react-router-dom";
-import crypto from "crypto-js";
 
 function App() {
   const projectsCard = objectToExport.get("cardsLs", []);
+
+  const cardsToShow = projectsCard.slice(0, 4);
+  console.log(cardsToShow);
   const { pathname } = useLocation();
   const routeData = matchPath("/card/:id", pathname);
   const cardId = routeData !== null ? routeData.params.id : "";
-  const foundCard = projectsCard.find((eachCard) => eachCard.id === cardId);
-  // const idCard = projectsCard.map((eachCard, index) => {
-  //   const id = index;
-  //   return id;
-  // });
+  console.log(cardId);
+
+  const foundCard = cardsToShow.find((index) => index === cardId);
+
+  // console.log(foundCard);
   return (
     <>
       <Header></Header>

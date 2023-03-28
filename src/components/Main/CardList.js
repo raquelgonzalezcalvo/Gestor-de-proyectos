@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Card from "./Card";
 
-function CardList({ cardsToShowP, foundCard, idCard }) {
+function CardList({ cardsToShowP }) {
   const loqsea = cardsToShowP.map((eachCard, index) => {
     return (
       <li className="eachCard" key={index}>
@@ -11,7 +11,6 @@ function CardList({ cardsToShowP, foundCard, idCard }) {
       </li>
     );
   });
-  console.log(foundCard);
   return <ul className="ulCard">{loqsea}</ul>;
 }
 
